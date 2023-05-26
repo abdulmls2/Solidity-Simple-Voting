@@ -3,7 +3,7 @@ pragma solidity >= 0.7.0 <0.9.0;
 contract Voting {
     mapping(address => bool) public hasVoted;
     uint256 public totalVotes;
-    address[] public votedAddresses;
+    address[] private votedAddresses;
 
     function vote() public {
         require(!hasVoted[msg.sender], "Already voted.");
